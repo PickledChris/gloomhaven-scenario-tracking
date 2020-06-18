@@ -13,14 +13,14 @@ digraph world {
 
 	# Side, completed
 	## Personal quest
-	61,62 [style=filled fillcolor="green" shape=box]; 
+	57,58,61,62 [style=filled fillcolor="green" shape=box]; 
 	## Random reward
 	63,65 [style=filled fillcolor="green" shape=box]; 
 	{rank=same; 1 65;}
 
 	# Side, incomplete
-	# Road
-	82,93 [style=filled fillcolor="yellow" shape=box]; 
+	# Road/City
+	82,83,93 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
@@ -38,6 +38,7 @@ digraph world {
 	26 -> 22 [color="red"];
 	23 -> 26 [style="dashed"]; # Unlocked 
 	24 -> 63;
+
 
 	subgraph cluster_0 {
 		label = "Jekserah";
@@ -100,11 +101,18 @@ digraph world {
 		61 -> 62;
 	}
 
+	subgraph cluster_11 {
+		label = "Dim Eyes's quest";
+		style = "filled";
+		color = "#b19760";
+		57-> 58;
+	}
+
 	subgraph cluster_20 {
 		label = "City event";
 		style = "filled";
 		color = "grey";
-		93;
+		83,93;
 	}
 
 	subgraph cluster_21 {
