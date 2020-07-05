@@ -18,9 +18,11 @@ digraph world {
 	63,65 [style=filled fillcolor="green" shape=box]; 
 	{rank=same; 1 65;}
 
-	# Side, incomplete
 	# Road/City
-	82,83,93 [style=filled fillcolor="yellow" shape=box]; 
+	# Side, complete
+	82 [style=filled fillcolor="green" shape=box]; 
+	# Side, incomplete
+	83,93 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
