@@ -14,4 +14,12 @@ Red: Conditions unmeetable
 ### Edges:
 Full arrows represent unlocking, a red arrow means the destination was already unlocked  
 Dotted arrows represent a reference  
-Dashed arrows means completing it fulfilled the conditions for another scenario  
+Dashed arrows means completing it fulfilled the conditions for another scenario
+
+
+<details><summary>Expand Image</summary>
+
+![Scenario Tree](scenarios.png)
+
+
+</details>
