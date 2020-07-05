@@ -17,11 +17,13 @@ digraph world {
 	## Random reward
 	63,65 [style=filled fillcolor="green" shape=box]; 
 	{rank=same; 1 65;}
+	# Complete
+	72 [style=filled fillcolor="green" shape=box]; 
 
 	# Road/City
-	# Side, complete
+	# Complete
 	82 [style=filled fillcolor="green" shape=box]; 
-	# Side, incomplete
+	# Incomplete
 	83,93 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
@@ -122,5 +124,12 @@ digraph world {
 		style = "filled";
 		color = "brown";
 		82;
+	}
+
+	subgraph cluster_22 {
+		label = "Town records";
+		style = "filled";
+		color = "#b52ecb";
+		72;
 	}
 }
