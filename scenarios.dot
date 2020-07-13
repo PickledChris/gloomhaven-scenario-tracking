@@ -23,9 +23,9 @@ digraph world {
 
 	# Road/City
 	# Complete
-	82 [style=filled fillcolor="green" shape=box]; 
+	82,93 [style=filled fillcolor="green" shape=box]; 
 	# Incomplete
-	80,83,93 [style=filled fillcolor="yellow" shape=box]; 
+	80,83 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
