@@ -3,13 +3,13 @@ digraph world {
 	labelloc="top";
 
 	# Normal, completed
-	1,2,3,4,5,9,10,11,14,16,18,19,21,22,23,24,25,26,30,32,35 [style=filled fillcolor="green"];
+	1,2,3,4,5,9,10,11,14,16,18,19,21,22,23,24,25,26,30,32,33,35 [style=filled fillcolor="green"];
 	# Normal, incomplete
-	6,27,31,33,34,32,42,43,45 [style=filled fillcolor="yellow"];
+	6,27,31,40,42,43,45 [style=filled fillcolor="yellow"];
 	# Normal, incomplete, requirements not met
-	40 [style=filled fillcolor="orange"];
+	// [style=filled fillcolor="orange"];
 	# Normal, uncompletable
-	7,8,12,36 [style=filled fillcolor="red"];
+	7,8,12,34,36 [style=filled fillcolor="red"];
 
 	# Side, completed
 	## Personal quest
@@ -91,6 +91,7 @@ digraph world {
 		30 -> 42;
 		32 -> 33;
 		32 -> 40;
+		33 -> 40[style="dotted"]; # Reference
 	}
 
 	subgraph cluster_4 {
