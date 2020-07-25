@@ -3,9 +3,9 @@ digraph world {
 	labelloc="top";
 
 	# Normal, completed
-	1,2,3,4,5,9,10,11,14,16,18,19,21,22,23,24,25,26,30,32,33,35,45,50 [style=filled fillcolor="green"];
+	1,2,3,4,5,6,9,10,11,14,16,18,19,21,22,23,24,25,26,30,32,33,35,45,50 [style=filled fillcolor="green"];
 	# Normal, incomplete
-	6,27,31,40,42,43 [style=filled fillcolor="yellow"];
+	27,31,40,42,43 [style=filled fillcolor="yellow"];
 	# Normal, incomplete, requirements not met
 	// [style=filled fillcolor="orange"];
 	# Normal, uncompletable
@@ -25,7 +25,7 @@ digraph world {
 	# Complete
 	82,93 [style=filled fillcolor="green" shape=box]; 
 	# Incomplete
-	80,83 [style=filled fillcolor="yellow" shape=box]; 
+	80,81,83 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
@@ -34,6 +34,7 @@ digraph world {
 	2 -> 4;
 	4 -> 5;
 	4 -> 6;
+	6 -> 8 [color="red"];
 	14 -> 7 [style="dotted"]; # Reference
 	14 -> 31 [style="dotted"]; # Reference
 	14 -> 43 [style="dotted"]; # Reference
@@ -129,7 +130,7 @@ digraph world {
 		label = "City event";
 		style = "filled";
 		color = "grey";
-		83,93;
+		81,83,93;
 	}
 
 	subgraph cluster_21 {
