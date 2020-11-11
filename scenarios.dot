@@ -4,11 +4,11 @@ digraph world {
 
 	# Normal, completed
 	1,2,3,4,5,6,9,10,11,14,16,18,19,21,22,23,24,25,26,27,30,
-	31,32,33,35,37,39,40,43,45,46,47,50 [style=filled fillcolor="green"];
+	31,32,33,35,37,38,39,40,43,45,46,47,48,50,51 [style=filled fillcolor="green"];
 	# Normal, incomplete
-	15,38,41,42,70 [style=filled fillcolor="yellow"];
+	15,17,41,42,70 [style=filled fillcolor="yellow"];
 	# Normal, incomplete, requirements not met
-	51 [style=filled fillcolor="orange"];
+	# [style=filled fillcolor="orange"];
 	# Normal, uncompletable
 	7,8,12,34,36,49[style=filled fillcolor="red"];
 	# Completed, casual
@@ -18,7 +18,7 @@ digraph world {
 
 	# Side, completed
 	## Personal quest
-	52,53,54,57,58,59,60,61,62 [style=filled fillcolor="green" shape=box]; 
+	52,53,54,55,57,58,59,60,61,62 [style=filled fillcolor="green" shape=box]; 
 	//[style=filled fillcolor="yellow" shape=box]; 
 	63,65 [style=filled fillcolor="green" shape=box]; 
 	64, 70 [style=filled fillcolor="yellow" shape=box]; 
@@ -26,9 +26,9 @@ digraph world {
 	{rank=same; 24 63;}
 	# Town records, road, city events
 	# Complete
-	72,82,93 [style=filled fillcolor="green" shape=box]; 
+	72,73,82,83,91,93 [style=filled fillcolor="green" shape=box]; 
 	# Incomplete
-	73,80,81,83,87 [style=filled fillcolor="yellow" shape=box]; 
+	80,81,87,94 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
@@ -128,7 +128,10 @@ digraph world {
 		39 -> 15;
 		46 -> 51;
 		37 -> 47;
+		37 -> 17;
 		47 -> 51[style="dashed"]; # Unlocked 
+		38 -> 48;
+		48 -> 51;
 
 	}
 
@@ -165,8 +168,15 @@ digraph world {
 		label = "City event";
 		style = "filled";
 		color = "grey";
-		81,83,87,93; 
-		81 -> 83 -> 87 -> 93 [style="invis"]; # Stacking hack
+		81,83,87,91,93; 
+		81 -> 83 -> 87 -> 91 -> 93 -> 94 [style="invis"]; # Stacking hack
+	}
+	
+	subgraph cluster_14 {
+		label = "Ethel's quest";
+		style = "filled";
+		color = "#C3D61B";
+		55;
 	}
 
 	subgraph cluster_21 {
