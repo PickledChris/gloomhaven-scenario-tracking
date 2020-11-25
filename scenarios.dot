@@ -1,5 +1,5 @@
 digraph world {
-	label="Gloomhaven";
+	label="Gloomhaven"
 	labelloc="top";
 
 	# Normal, completed
@@ -18,17 +18,17 @@ digraph world {
 
 	# Side, completed
 	## Personal quest
-	52,53,54,55,57,58,59,60,61,62 [style=filled fillcolor="green" shape=box]; 
+	52,53,54,55,56,57,58,59,60,61,62 [style=filled fillcolor="green" shape=box]; 
 	//[style=filled fillcolor="yellow" shape=box]; 
 	63,65 [style=filled fillcolor="green" shape=box]; 
-	64, 70 [style=filled fillcolor="yellow" shape=box]; 
+	64,66,68,70,71 [style=filled fillcolor="yellow" shape=box]; 
 	{rank=same; 1 65;}
 	{rank=same; 24 63;}
 	# Town records, road, city events
 	# Complete
 	72,73,82,83,91,93 [style=filled fillcolor="green" shape=box]; 
 	# Incomplete
-	80,81,87,94 [style=filled fillcolor="yellow" shape=box]; 
+	77,80,81,87,94 [style=filled fillcolor="yellow" shape=box]; 
 
 	1 -> 2;
 	1 -> 65;
@@ -164,19 +164,19 @@ digraph world {
 		59 -> 60;
 	}
 
+	subgraph cluster_14 {
+		label = "Ethel's quest";
+		style = "filled";
+		color = "#C3D61B";
+		55 -> 56;
+	}
+
 	subgraph cluster_20 {
 		label = "City event";
 		style = "filled";
 		color = "grey";
 		81,83,87,91,93; 
 		81 -> 83 -> 87 -> 91 -> 93 -> 94 [style="invis"]; # Stacking hack
-	}
-	
-	subgraph cluster_14 {
-		label = "Ethel's quest";
-		style = "filled";
-		color = "#C3D61B";
-		55;
 	}
 
 	subgraph cluster_21 {
@@ -193,7 +193,8 @@ digraph world {
 		color = "#b52ecb";
 		72;
 		73;
-		72 -> 73 [style="invis"]; # Stacking hack
+		77;
+		72 -> 73 -> 77 [style="invis"]; # Stacking hack
 	}
 	
 	subgraph cluster_23 {
@@ -201,6 +202,10 @@ digraph world {
 		style = "filled";
 		color = "#9afadf";
 		64;
+		66;
+		68;
 		70;
+		71;
+		64 -> 66 -> 68 -> 70 -> 71 [style="invis"]; # Stacking hack
 	}
 }
